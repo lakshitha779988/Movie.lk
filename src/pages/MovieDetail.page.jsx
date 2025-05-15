@@ -21,8 +21,7 @@ function MovieDetail() {
   const { id } = useParams();
   const { loading } = useMovieContext();
   const { movieDetail, error } = useFetchMovieFullDetail(id);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
 
   if (loading) return <Loading />;
   if (error) return <div>Error: {error.message}</div>;

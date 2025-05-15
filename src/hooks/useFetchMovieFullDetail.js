@@ -22,8 +22,9 @@ const useFetchMovieFullDetail = (movieId) => {
       try {
         setLoading(true);
         const response = await axios.get(API_URL, { headers: HEADERS });
-        console.log(response.data);
+  
         setMovieDetail(response.data);
+        setLoading(false);
       } catch (err) {
         console.error('Failed to fetch full movie detail:', err);
         setError(err);
